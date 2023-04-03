@@ -1,0 +1,25 @@
+<%- include('./partials/head') %>
+
+<div class="layout">
+  <% methods.forEach(method => { %>
+  <section id="section-main">
+    <p class="method-title"><%= method.title %></p>
+    <!-- <a
+      href="/method/<%= method.slug %>?id=<%= method.id %>"
+      class="link-detail-page"
+    > -->
+      <img
+        src="<%= method.template?.url %>"
+        onerror="this.src='assets/logo.svg';"
+        class="image-template"
+        alt="foto van <%= method.title %>"
+      />
+      <% method.categories.forEach(category => { %>
+      <span class="categories-hidden"> <%= category.title %> </span>
+      <% }) %>
+    </a>
+  </section>
+  <% }) %>
+</div>
+
+<%- include('./partials/footer') %>
