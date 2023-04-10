@@ -47,10 +47,6 @@ a {
   color: inherit;
 }
 
-/* Head----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* Head----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* Head----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
 header {
   display: flex;
   justify-content: space-between;
@@ -73,14 +69,10 @@ header {
   padding: 1rem 3rem 1rem 0rem;
 }
 
-/* Index---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* Index---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* Index---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
 .layout {
-  display: grid;
-  grid-template-rows: repeat(auto-fit, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 1rem 0rem;
 }
 
@@ -112,48 +104,20 @@ p {
   font-size: 1rem;
 }
 
-.link-detail-page {
+.link-insight-page {
   display: flex;
   align-items: end;
   justify-content: center;
+}
+
+.link-insight-page:hover {
+  box-shadow: 0px 5px 0px 0px;
 }
 
 .image-template {
   max-width: 20rem;
   max-height: 20rem;
 }
-
-.categories-hidden {
-  z-index: 999;
-  display: none;
-}
-
-.categories-shown {
-  z-index: 999;
-  display: block;
-  animation-name: span-slide;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  background: #feb51e;
-  pointer-events: none;
-  position: absolute;
-}
-
-@keyframes span-slide {
-  0% {
-    opacity: 0%;
-  }
-  100% {
-    margin-top: -5rem;
-    opacity: 100%;
-  }
-}
-
-/* Detail-page---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* Detail-page---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* Detail-page---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 .nav-details {
   display: flex;
@@ -170,13 +134,7 @@ p {
   margin-left: 3rem;
 }
 
-.image-template-detail-page {
-  max-width: 20rem;
-  max-height: 20rem;
-}
-
 .section-details {
-  /* border: none; */
   width: 100%;
 }
 
@@ -190,7 +148,16 @@ p {
   flex-direction: row;
 }
 
-.image-example {
-  max-width: 20rem;
-  max-height: 20rem;
+.main-method-content {
+  margin-left: 6rem;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.message-text {
+  font-size: 1.333rem;
+  padding-left: 0.5rem;
 }

@@ -1,0 +1,36 @@
+<%- include('./partials/head') %> 
+
+
+
+<section class="description">
+    <title>Beschrijving</title><p>Met deze werkvorm kan je studenten laten terugblikken en na laten denken over de negative en positieve aspecten van deze periode.
+     De retrospect kan schematisch maar ook in de vorm van een metafoor worden getekend.
+    </p>
+    <title><%= method.material %></title>
+</section>
+
+    <section class="material">
+        <p >
+            <%= method.material %>
+        </p>
+    </section>
+
+    <section class="duration">
+        <p >
+            <%= method.duration %>
+        </p>
+    </section> 
+
+    <section class="source">
+        <% method.sources.forEach(source => { %>   
+            <h5 class="header-source"> <%= source.title %> </h5>
+            <a href="<%= source.url %>" > <%= source.url %> </a>
+         <% }) %> 
+    </section>
+ 
+    <button class="comments"> 
+            <a href="/method/<%= method.slug %>/form?id=<%= method.id %>" class="link-feedback">Feedback</a> 
+        </button>
+
+    
+<%- include('./partials/footer') %>

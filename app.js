@@ -1,4 +1,5 @@
-import express from "express";
+import { render } from "ejs";
+import express, { response } from "express";
 
 const url = "https://api.visualthinking.fdnd.nl/api/v1/";
 
@@ -24,7 +25,38 @@ app.get("/method/:slug", (request, response) => {
   console.log(id);
 
   fetchJson(detailPageUrl).then((data) => {
-    response.render("detail-page", data);
+    response.render("method", data);
+  });
+});
+
+app.get("/method/:slug/form", (request, response) => {
+  let detailPageUrl = url + "method/" + request.params.slug;
+  const baseUrl = "https://api.visualthinking.fdnd.nl/api/v1/";
+  const commentUrl = `${baseUrl}comments` + "?id=" + request.query.id;
+
+  fetchJson(detailPageUrl).then((data) => {
+    fetchJson(commentUrl).then((data2) => {
+      const newdata = { detail: data, form: data2, slug: request.params.slug };
+
+      response.render("form", newdata);
+    });
+  });
+});
+
+app.post("/method/:slug/form", (request, response) => {
+  const baseurl = "https://api.visualthinking.fdnd.nl/api/v1/";
+  const url = `${baseurl}comments`;
+
+  postJson(url, request.body).then((data) => {
+    if (data.success) {
+      response.redirect(
+        "/method/" + request.params.slug + "?methodPosted=true"
+      );
+    } else {
+      response.redirect(
+        "/method/" + request.params.slug + "?methodPosted=false"
+      );
+    }
   });
 });
 
@@ -36,6 +68,16 @@ app.listen(app.get("port"), function () {
 
 async function fetchJson(url) {
   return await fetch(url)
+    .then((response) => response.json())
+    .catch((error) => error);
+}
+
+export async function postJson(url, body) {
+  return await fetch(url, {
+    method: "post",
+    body: JSON.stringify(body),
+    headers: { "Content-Type": "application/json" },
+  })
     .then((response) => response.json())
     .catch((error) => error);
 }
