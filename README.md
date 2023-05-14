@@ -33,6 +33,7 @@ Deze website is gemaakt met de API/Database van Visual Thinking. Om met die data
 
 ## Bronnen
 [https://github.com/fdnd-agency/visual-thinking](https://github.com/fdnd-agency/visual-thinking)
+
 [https://api.visualthinking.fdnd.nl/](https://api.visualthinking.fdnd.nl/)
 
 ## Licentie
