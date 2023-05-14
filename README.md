@@ -29,7 +29,8 @@ Deze website is gemaakt met de API/Database van Visual Thinking. Om met die data
 * HTML
 
 ## Installatie
-[Nodejs.org](Nodejs.org), voor de installatie van Node op jouw systeem, kies voor Node 18.14.0 LTS (Long Term Support). Dit is de meest stabiele versie van Node welke ondersteund wordt met goede documentatie. Vervolgens open je de terminal met (control + `) en typ je "npm install".
+[Nodejs.org](Nodejs.org), voor de installatie van Node op jouw systeem, kies voor Node 18.14.0 LTS (Long Term Support). Dit is de meest stabiele versie van Node welke ondersteund wordt met goede documentatie. Vervolgens open je de terminal met (control + `) en typ je "npm install". 
+Voor het draaien van een server lokaal op je laptop of computer doe je het volgende in de terminal: "npm start" En daarna krijg je een lokale server met als link: http://localhost:8000/
 
 ## Bronnen
 [https://github.com/fdnd-agency/visual-thinking](https://github.com/fdnd-agency/visual-thinking)
